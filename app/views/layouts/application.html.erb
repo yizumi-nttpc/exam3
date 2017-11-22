@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exam3</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <div class="row">
+  <header>
+    <ul>
+      <li><%= link_to "HOME", root_path %></li>
+      <li><%= link_to "TOPIC", topics_path %></li>
+      <li><%= link_to "Find Friends", root_path %></li>
+      <li><%= link_to "Log-In", root_path %></li>
+      <li><%= link_to "Sign-Up", root_path %></li>
+    </ul>
+  </header>
+  </div>
+
+<%= yield %>
+
+</body>

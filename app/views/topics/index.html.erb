@@ -1,0 +1,23 @@
+<p><%= notice %></p>
+
+<h1>トピックス</h1>
+
+<p>
+<%= link_to "今の気分は？", new_topic_path, class: 'btn btn-default' %>
+</p>
+
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+
+    <% @topics.each do |topic| %>
+
+    <div class="row">
+      <p>トピック：<%= topic.content %></p>
+      <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-sm btn-success' %>
+      <%= link_to "削除", topic_path(topic.id), method: :delete, data: { confirm: '削除していいですか？' }, class: 'btn btn-sm btn-danger' %>
+    </div>
+
+  <% end %>
+
+  </div>
+</div>

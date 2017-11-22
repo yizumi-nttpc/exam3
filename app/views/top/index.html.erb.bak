@@ -1,0 +1,14 @@
+<header>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Topic</a></li>
+    <li><a href="#">Find Frend</a></li>
+    <li><a href="#">Message</a></li>
+    <li><a href="#">お知らせ</a></li>
+    <li><a href="#">Login</a></li>
+  </ul>
+</header>
+
+<section class="main-header">
+  <h1>Topic Note</h1>
+</section>
