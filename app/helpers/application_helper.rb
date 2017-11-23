@@ -9,4 +9,13 @@ module ApplicationHelper
     end
     image_tag(img_url, alt: user.name)
   end
+
+  def pict_img(topic)
+    return image_tag(topic.pict) if topic.pict?
+
+    unless topic.pict.blank?
+      img_url = topic.image_url
+    end
+    image_tag(img_url)
+  end
 end

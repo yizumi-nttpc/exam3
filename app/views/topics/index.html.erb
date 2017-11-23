@@ -12,10 +12,15 @@
     <% @topics.each do |topic| %>
 
     <div class="row">
-      <p><%= profile_img(User.find(topic.id)) %> <%= topic.user.name %></p>
+      <p><%= profile_img(topic.user) %> <%= topic.user.name %></p>
+      <% if ! topic.pict.blank? %>
+      <p><%= pict_img(topic) if pict_img(topic) %></p>
+      <% end %>
       <p><%= topic.content %></p>
+      <% if topic.user.id == current_user.id %>
       <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-sm btn-success' %>
       <%= link_to "削除", topic_path(topic.id), method: :delete, data: { confirm: '削除していいですか？' }, class: 'btn btn-sm btn-danger' %>
+      <% end %>
     </div>
 
   <% end %>
