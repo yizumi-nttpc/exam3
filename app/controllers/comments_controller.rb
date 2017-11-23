@@ -35,9 +35,10 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       @comment.destroy
-      format.html { redirect_to topic_path(@topic), notice: 'コメントを削除しました。' }
+      format.html { redirect_to topic_path(@comment.topic), notice: 'コメントを削除しました。' }
       format.js { render :index }
     end
+
   end
 
  private
