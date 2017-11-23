@@ -12,7 +12,8 @@
     <% @topics.each do |topic| %>
 
     <div class="row">
-      <p>トピック：<%= topic.content %></p>
+      <p><%= profile_img(User.find(topic.id)) %> <%= topic.user.name %></p>
+      <p><%= topic.content %></p>
       <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-sm btn-success' %>
       <%= link_to "削除", topic_path(topic.id), method: :delete, data: { confirm: '削除していいですか？' }, class: 'btn btn-sm btn-danger' %>
     </div>
