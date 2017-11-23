@@ -16,8 +16,10 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topics_params)
+    @topic.user_id = current_user.id
     if @topic.save
       redirect_to topics_path, notice: "登録しました"
+      NoticeMailer.sendmail_topic(@topic).deliver
     else
       render 'new'
     end
