@@ -10,22 +10,30 @@
 </head>
 <body>
 
-  <div class="row">
   <header>
-    <ul>
-      <li><%= link_to "HOME", root_path %></li>
-      <li><%= link_to "TOPIC", topics_path %></li>
-      <li><%= link_to "Find Friends", root_path %></li>
-      <% if user_signed_in? %>
-        <li><%= link_to "User-Info", edit_user_registration_path %></li>
-        <li><%= link_to "Log-Out", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "Log-In", new_user_session_path %></li>
-        <li><%= link_to "Sign-Up", new_user_registration_path %></li>
-      <% end %>
-    </ul>
+
+    <div class="row">
+      <div class="col-xs-4">
+        <ul>
+          <li><%= link_to '', root_path, class: "fa fa-facebook-official fa-lg" %></li>
+        </ul>
+      </div>
+      <div class="col-xs-8">
+        <ul>
+          <li><%= link_to "Find Friends", root_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "ホーム", topics_path %></li>
+            <li><%= link_to current_user.name, edit_user_registration_path %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <li><%= link_to "サインアップ", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
   </header>
-  </div>
 
 <%= yield %>
 
