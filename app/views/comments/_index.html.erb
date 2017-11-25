@@ -4,6 +4,11 @@
       <li>
         <p class="left"><%= comment.user.name %>さんがコメントしました。</p>
         <p class="left"><%= comment.content %></p>
+        <p class="right">
+          <strong>作成時間:</strong>
+          <%= comment.created_at.strftime("%y/%m/%d %p %l:%M") %>
+        </p>
+
         <% if current_user.id == comment.user.id %>
           <p class="right">
             <%= link_to '', edit_topic_comment_path(topic, comment), class: "fa fa-pencil-square-o fa-lg" %>

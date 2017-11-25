@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'notifications/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  resources :conversations do
+    resources :messages
+  end
+
+  resources :relationships, only: [:create, :destroy]
+
+  resources :users, only: [:index, :edit]
 
   devise_for :users, controllers: {
     registrations: "users/registrations",
