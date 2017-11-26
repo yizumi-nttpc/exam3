@@ -16,7 +16,7 @@ module ApplicationHelper
     unless topic.pict.blank?
       img_url = topic.image_url
     else
-      img_url = "no_image.png"
+      img_url = ''
     end
     image_tag(img_url)
   end
