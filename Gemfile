@@ -45,7 +45,6 @@ group :development, :test do
   gem 'letter_opener_web'
   gem 'pry-rails'
   gem 'better_errors'
-  gem 'dotenv-rails'
 
   gem 'capistrano', '3.6.0'
   gem 'capistrano-bundler'
