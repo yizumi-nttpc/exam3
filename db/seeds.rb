@@ -21,8 +21,8 @@
 
 n = 1
 u = 10
-t = 5
-u2 = u + 1
+#t = 5
+#u2 = u + 1
 while n <= 30
   content = Faker::Movie.quote
   Topic.create!(
@@ -30,20 +30,20 @@ while n <= 30
     user_id: u,
   )
 
-  content = Faker::Book.title
-  Comment.create!(
-    content: content,
-    user_id: u,
-    topic_id: t,
-  )
+#  content = Faker::Book.title
+#  Comment.create!(
+#    content: content,
+#    user_id: u,
+#    topic_id: t,
+#  )
 
-  Conversation.create!(
-    sender_id: u,
-    recipient_id: u2,
-  )
+#  Conversation.create!(
+#    sender_id: u,
+#    recipient_id: u2,
+#  )
   n = n + 1
   u = u + 1
-  t = t + 1
-  u2 = u2 + 1
+#  t = t + 1
+#  u2 = u2 + 1
 end
 
