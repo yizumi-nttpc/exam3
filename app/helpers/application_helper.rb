@@ -12,12 +12,5 @@ module ApplicationHelper
 
   def pict_img(topic)
     return image_tag(topic.pict) if topic.pict?
-
-    unless topic.pict.blank?
-      img_url = topic.image_url
-    else
-      img_url = ''
-    end
-    image_tag(img_url)
   end
 end

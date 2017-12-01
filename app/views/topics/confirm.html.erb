@@ -9,7 +9,7 @@
       <%= f.hidden_field :pict_cache %>
       <%= f.hidden_field :content %>
 
-      <p><%= pict_img(@topic) if pict_img(@topic) %></P>
+      <p><%= image_tag @topic.pict.url if ! @topic.pict.blank? %></P>
       <p><%= @topic.content %></p>
       <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
     <% end %>

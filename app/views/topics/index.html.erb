@@ -13,7 +13,7 @@
       <p><%= profile_img(topic.user) %> <%= topic.user.name %></p>
 
       <p><%= topic.content %></p>
-      <% if ! topic.pict.blank? %>
+      <% unless topic.pict.blank? %>
         <p><%= pict_img(topic) if pict_img(topic) %></p>
       <% end %>
       <p><%= link_to topic_path(topic) do %>コメントする<% end %></p>

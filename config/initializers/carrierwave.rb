@@ -1,4 +1,12 @@
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
+
 CarrierWave.configure do |config|
+
+  config.cache_storage = :fog
+  config.storage = :fog
+
   config.fog_credentials = {
       provider:              'AWS',
       aws_access_key_id:     ENV["AWS_ACCESS_KEY_ID"],
