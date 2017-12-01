@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-50.times do |n|
+100.times do |n|
   email = Faker::Internet.email
   name = Faker::StarTrek.character
   uid = Faker::Code.isbn
