@@ -6,28 +6,28 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-100.times do |n|
-  email = Faker::Internet.email
-  name = Faker::StarTrek.character
-  uid = Faker::Code.isbn
-  password = "password"
-  User.create!(email: email,
-               name: name,
-               uid: uid,
-               password: password,
-               password_confirmation: password,
-               )
-end
+#100.times do |n|
+#  email = Faker::Internet.email
+#  name = Faker::StarTrek.character
+#  uid = Faker::Code.isbn
+#  password = "password"
+#  User.create!(email: email,
+#               name: name,
+#               uid: uid,
+#               password: password,
+#               password_confirmation: password,
+#               )
+#end
 
-n = 10
-u = 6
-t = 14
+n = 1
+u = 10
+t = 5
 u2 = u + 1
 while n <= 30
   content = Faker::Movie.quote
   Topic.create!(
     content: content,
-    user_id: n,
+    user_id: u,
   )
 
   content = Faker::Book.title
